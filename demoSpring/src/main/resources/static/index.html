@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <!--Head del documento-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Rubrica Frontend e Backend</title>
+</head>
+<style>
+    #add_form,
+    #form_ricerca,
+    #cont_tabella {
+        padding-left: 10em;
+        padding-right: 10em;
+    }
+</style>
+
+<body>
+
+    <div id="class_navbar">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand">Rubrica</a>
+            </div>
+        </nav>
+    </div>
+
+    <!--FORM DI INPUT VALORI-->
+    <br>
+    <div id="add_form">
+        <form class="row g-3 needs-validation" novalidate>
+            <div class="row g-3">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input class="form-control me-2" type="text" id="nome" placeholder="nome" required>
+                        <label for="nome">Inserisci il nome</label>
+                        <div class="valid-feedback">
+                            Bravo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Per favore inserisci il nome!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input class="form-control me-2" type="text" id="cognome" placeholder="cognome" required>
+                        <label for="cognome">Inserisci il cognome</label>
+                        <div class="valid-feedback">
+                            Bravo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Per favore inserisci il cognome!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input class="form-control me-2" type="text" id="numero" placeholder="numero" required>
+                        <label for="numero">Inserisci il numero</label>
+                        <div class="valid-feedback">
+                            Bravo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Per favore inserisci il cognome!
+                        </div>
+                    </div>
+                </div>
+                <button id="aggPer" onclick="aggiungiPersona()" class="btn btn-outline-primary">Aggiungi
+                    Persona</button>
+            </div>
+        </form>
+    </div>
+    <br>
+    <!--TABELLA DINAMICA-->
+    <div id="cont_tabella">
+        <table id="primaTabella" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Cognome</th>
+                    <th scope="col">Numero</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabella" style="vertical-align: middle;">
+                <!--elementi aggiunti da JS-->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModal">Modifica la voce</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!--Form wrap-->
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="modal-body">
+                        <!--INPUT TEXT POPUP-->
+                        <input class="form-control me-2" type="text" id="nomeEdit" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback"></div>
+                        <br>
+                        <input type="text" id="cognomeEdit" class="form-control me-2" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback"></div>
+                        <br>
+                        <input type="text" id="telefonoEdit" class="form-control me-2" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        <button type="submit" id="salvaValori" class="btn btn-primary">Salva Modifica</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--FORM DI RICERCA-->
+    <div id="form_ricerca">
+        <form class="row g-3 needs-validation" novalidate>
+            <div class="row g-2">
+                <div class="col-md">
+                    <input class="form-control me-2" type="text" id="search" required>
+                    <div class="valid-feedback">
+                        Bravo!
+                    </div>
+                    <div class="invalid-feedback">
+                        Per favore inserisci un valore per la ricerca!
+                    </div>
+                </div>
+                <div class="col-md">
+                    <button onclick="searchVoce()" class="btn btn-outline-primary">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--FILE JS-->
+    <script src="table.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

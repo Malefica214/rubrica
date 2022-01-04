@@ -1,0 +1,10 @@
+table{
+    width: 60%;
+}
+
+thead{
+    background-color: gray;
+    height: 35px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
