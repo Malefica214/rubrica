@@ -36,8 +36,7 @@ public class RubricaApiController {
     ArrayList<Voce> voci = new ArrayList<>();
 
     @Autowired //dependency injection automagicamente
-    VociRepo
-            vociRepo;
+    VociRepo vociRepo;
 
 
     //http://localhost/api/v1/version
